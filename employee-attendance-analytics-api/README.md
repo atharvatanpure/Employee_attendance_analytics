@@ -2,8 +2,6 @@
 
 A backend API built with **Python, FastAPI, and MongoDB** for managing employee attendance. It supports employee records, punch-in/punch-out, attendance corrections with an audit history, and attendance analytics using MongoDB aggregation pipelines.
 
-> **Project status:** This repository has been syntax-checked, but it has not been fully integration-tested against a live MongoDB instance. Run the checks below with your own database before using it as a demonstration or submission.
-
 ## What this project does
 
 - **Manage employees** — create employees and retrieve a paginated employee list.
@@ -91,23 +89,6 @@ Docker builds the image, installs Python dependencies inside the container, and 
 To stop the service, press **Ctrl+C**, then run `docker compose down` in the project folder. After the first build, you can usually start it with `docker compose up`.
 
 **Troubleshooting:** If the container exits during startup, check the terminal output and the `.env` MongoDB settings. Do not put your real `.env` file in GitHub. If port 8000 is already in use, change the left side of the port mapping in `docker-compose.yml`, for example `"8001:8000"`, then open `http://localhost:8001/docs`.
-
-## Demo video
-
-Add a short screen recording demonstrating the API before submitting the repository. Recommended contents (about 2–4 minutes):
-
-1. Show the project and briefly explain the Python + FastAPI + MongoDB architecture.
-2. Show `GET /health` succeeding in Swagger UI.
-3. Create an employee, then perform punch-in and punch-out.
-4. Show an attendance record in MongoDB Atlas, without revealing credentials or private employee data.
-5. Demonstrate one invalid request/business rule and one analytics endpoint.
-6. Briefly show the Docker Compose command used to start the backend.
-
-Save the recording as `demo.mp4` in the repository (only if it is a reasonably small file), or upload it to a shareable video location and add the link here:
-
-`**Demo video:** Add your video link here`
-
-Do not record your `.env` file, MongoDB connection string, passwords, or real/private employee information. Use test data only. If you upload the video to GitHub, verify the file size limits first; a short compressed MP4 or a link to a shareable video is usually easier to maintain.
 
 ## Run locally on Windows
 
@@ -285,7 +266,3 @@ Before demonstrating or submitting the project, test at least these cases throug
 **A request returns `404`, `409`, or `422`**
 
 These are commonly used HTTP status codes: `404` means the requested employee or attendance record was not found; `409` indicates a conflict such as a duplicate employee or attendance record; `422` means request data or business-rule validation failed. Read the response body for the specific explanation.
-
-## License
-
-No license has been specified. Add a license file if you intend to permit reuse or redistribution.
